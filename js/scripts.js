@@ -35,3 +35,5 @@ $("input:checkbox[name=toppings]:checked").each(function(){
    toppingsArray.push(topping);
 });
 var pizza = new Pizza(sizeName, toppingsArray, price);
+
+Order.addPizza(pizza)
