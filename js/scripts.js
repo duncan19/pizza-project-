@@ -18,14 +18,15 @@ Order.prototype.assignId = function() {
 }
 
 //doc ready
-
+(document).ready(function() {
+  $("submitBtn").click(function(event){
 var order = new Order;
 var size = $("#size").val();
-var sizeName = if(size = 1){
+var sizeName = if(size === 1){
   sizeName = "small";
-}if(size = 2){
+}if(size === 2){
   sizeName = "medium";
-}if(size = 3){
+}if(size === 3){
   sizeName = "large";
 }
 var toppingsArray = []
@@ -34,6 +35,8 @@ $("input:checkbox[name=toppings]:checked").each(function(){
    var topping = $(this).val();
    toppingsArray.push(topping);
 });
-var pizza = new Pizza(sizeName, toppingsArray, price);
+  var pizza = new Pizza(sizeName, toppingsArray, price);
 
-Order.addPizza(pizza)
+  Order.addPizza(pizza)
+  });
+});
