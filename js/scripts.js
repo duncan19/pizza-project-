@@ -1,4 +1,4 @@
-//add constructor
+//back end
 function Order() {
   this.pizzas = [],;
   this.currentId = 0;
@@ -20,23 +20,24 @@ Order.prototype.assignId = function() {
 //doc ready
 (document).ready(function() {
   $("submitBtn").click(function(event){
-var order = new Order;
-var size = $("#size").val();
-var sizeName = if(size === 1){
-  sizeName = "small";
-}if(size === 2){
-  sizeName = "medium";
-}if(size === 3){
-  sizeName = "large";
-}
-var toppingsArray = []
-var price = size + toppingsArray.length();
-$("input:checkbox[name=toppings]:checked").each(function(){
-   var topping = $(this).val();
-   toppingsArray.push(topping);
-});
-  var pizza = new Pizza(sizeName, toppingsArray, price);
-
-  Order.addPizza(pizza)
+    event.preventDefault();
+    var order = new Order;
+    var size = $("#size").val();
+    var sizeName = if(size === 1){
+      sizeName = "small";
+    }if(size === 2){
+      sizeName = "medium";
+    }if(size === 3){
+      sizeName = "large";
+    }
+    var toppingsArray = [];
+    var price = size + toppingsArray.length();
+    $("input:checkbox[name=toppings]:checked").each(function(){
+       var topping = $(this).val();
+       toppingsArray.push(topping);
+    });
+      var pizza = new Pizza(sizeName, toppingsArray, price);
+      Order.addPizza(pizza);
+      alert(Order);
   });
 });
