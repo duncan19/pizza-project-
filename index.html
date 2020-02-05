@@ -8,50 +8,47 @@
     <title>Pizza Shop</title>
   </head>
   <body>
-      <div class="container">
-        <div class="jumbotron">
-          <h1>The Pizza Place</h1>
-          <p>the best pizza around</p>
-          <img src="https://media.boingboing.net/wp-content/uploads/2018/07/Boston-Pizza-table-and-chairs.png" alt="picture of pizza">
-        </div>
-      <form class="sizeform">
-        <div class="size">
-          <h1><em>What size pizza do you want</em></h1>
-          <select class="form-control" id="size">
-            <option value="1">Small</option>
-            <option value="2">Medium</option>
-            <option value="3">Large</option>
-          </select>
-        </div>
-      </form>
-      <div class="toppings">
-        <form class="toppingsform">
+    <div class="container">
+      <div class="jumbotron">
+        <h1>The Pizza Place</h1>
+        <p>the best pizza around</p>
+        <img src="https://media.boingboing.net/wp-content/uploads/2018/07/Boston-Pizza-table-and-chairs.png" alt="picture of pizza">
+      </div>
+      <form id="pizzaForm">
+        <h1><em>What size pizza do you want</em></h1>
+        <select class="form-control" id="size">
+          <option value="1">Small</option>
+          <option value="2">Medium</option>
+          <option value="3">Large</option>
+        </select>
+        <div class="toppings">
           <fieldset>
             <legend>Choose your toppings</legend>
-              <div>
-                <input type="checkbox" id="pepperoni" name="topping" value="pepperoni">
-                <label for="pepperoni">Pepperoni</label>
-              </div>
-              <div>
-                <input type="checkbox" id="olives" name="topping" value="olives">
-                <label for="olives">Olives</label>
-              </div>
-              <div>
-                <input type="checkbox" id="mushrooms" name="topping" value="mushrooms">
-                <label for="mushrooms">Mushrooms</label>
-              </div>
-              <div>
-                <input type="checkbox" id="peppers" name="topping" value="peppers">
-                <label for="peppers">Peppers</label>
-              </div>
-              <div>
-                <input type="checkbox" id="extraCheese" name="topping" value="extraCheese">
-                <label for="extraCheese">Extra Cheese</label>
-              </div>
-            </fieldset>
-            <button type="submit" class="btn btn-dark" id="submitBtn">Submit Your Answers</button>
-          </form>
+            <div>
+              <input type="checkbox" id="pepperoni" name="topping" value="pepperoni">
+              <label for="pepperoni">Pepperoni</label>
+            </div>
+            <div>
+              <input type="checkbox" id="olives" name="topping" value="olives">
+              <label for="olives">Olives</label>
+            </div>
+            <div>
+              <input type="checkbox" id="mushrooms" name="topping" value="mushrooms">
+              <label for="mushrooms">Mushrooms</label>
+            </div>
+            <div>
+              <input type="checkbox" id="peppers" name="topping" value="peppers">
+              <label for="peppers">Peppers</label>
+            </div>
+            <div>
+              <input type="checkbox" id="extraCheese" name="topping" value="extraCheese">
+              <label for="extraCheese">Extra Cheese</label>
+            </div>
+          </fieldset>
         </div>
-      </div>
-    </body>
+        <button type="submit" class="btn btn-dark" id="submitBtn">Submit Your Answers</button>
+      </form>
+      <ul id="pizzas"></ul>
+    </div>
+  </body>
 </html>

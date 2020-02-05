@@ -25,12 +25,12 @@ _output: “2”_
 _User selects toppings and display number of toppings user has selected_
 _input:  “Olives”, “mushrooms” , “sausage”_
 _output: “3”_
-_Determine cost of pizza by combining the size number along with the number of toppings_
-_input:  “medium”+”Olives”+”pepperoni”_
-_output: “4”_
-_Use if else to turn our number for the cost to a realistic value_
-_input:  “4”_
-_output: "$12”_
+_Use if statements in order to determine a price_
+_input:  “3 toppings size small”_
+_output: "$13”_
+_Display the user price on the page_
+_input: "small", "extra cheese", "olives"_
+_output: your pizza will be $13_
 
 
 ## Known Bugs
@@ -43,7 +43,7 @@ _If any issues occur feel free to contact me at 503-456-3443 or email me at dunc
 
 ## Technologies Used
 
-_This software uses HTML CSS Bootstrap jQuery and Java Script_
+_This software uses HTML CSS Bootstrap jQuery and JavaScript_
 
 ### License
 

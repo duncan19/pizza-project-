@@ -1,43 +1,76 @@
 //back end
 function Order() {
-  this.pizzas = [],;
-  this.currentId = 0;
-}
-function Pizza(size, topping, price) {
-  this.size = size,;
-  this.topping1 = topping,;
-  this.price = price;
+  this.pizzas = [],
+  this.currentId = 0
 }
 Order.prototype.addPizza = function(pizza) {
-  contact.id = this.assignId();
+  pizza.id = this.assignId();
   this.pizzas.push(pizza);
-}
+};
 Order.prototype.assignId = function() {
   this.currentId += 1;
   return this.currentId;
+};
+Order.prototype.findId = function(id) {
+  for (var i=0; i < this.pizzas.length; i++) {
+    if (this.pizzas[i]) {
+      if (this.pizzas[i].id == id) {
+        return this.pizzas[i];
+      }
+    }
+  }
+  return false;
+};
+function displayPizza(pizzaToDisplay) {
+  var pizzaList = $("ul#pizzas");
+  var htmlForPizza = "";
+  pizzaToDisplay.pizzas.forEach(function(pizza){
+    htmlForPizza += "<li id=" + pizza.id + ">" + "Pizza" + pizza.id + " will cost $" + pizza.price +  "</li>";
+  });
+  pizzaList.html(htmlForPizza);
 }
 
-//doc ready
-(document).ready(function() {
-  $("submitBtn").click(function(event){
+function Pizza() {
+  this.size = "default",
+  this.price = "default",
+  this.topping = "defualt"
+}
+Pizza.prototype.setSize = function(sizeName) {
+  this.size = sizeName;
+};
+Pizza.prototype.setPrice = function(price) {
+  this.price = price;
+};
+Pizza.prototype.setTopping = function(toppingsArray) {
+  this.topping = toppingsArray;
+};
+
+
+//front end
+$(document).ready(function(){
+  var order = new Order();
+  $("#pizzaForm").submit(function(event){
     event.preventDefault();
-    var order = new Order;
+    var toppingsArray = [];
     var size = $("#size").val();
-    var sizeName = if(size === 1){
+    var sizeName = "default";
+    if(size == 1){
       sizeName = "small";
-    }if(size === 2){
+    }if(size == 2){
       sizeName = "medium";
-    }if(size === 3){
+    }if(size == 3){
       sizeName = "large";
     }
-    var toppingsArray = [];
-    var price = size + toppingsArray.length();
-    $("input:checkbox[name=toppings]:checked").each(function(){
+    $("input:checkbox[name=topping]:checked").each(function(){
        var topping = $(this).val();
        toppingsArray.push(topping);
     });
-      var pizza = new Pizza(sizeName, toppingsArray, price);
-      Order.addPizza(pizza);
-      alert(Order);
+    var price = size + toppingsArray.length;
+    var pizza = new Pizza();
+    pizza.setSize(sizeName);
+    pizza.setPrice(price);
+    pizza.setTopping(toppingsArray);
+    order.addPizza(pizza);
+    displayPizza(order);
   });
 });
