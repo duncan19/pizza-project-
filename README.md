@@ -39,7 +39,7 @@ _Currently there are no known bugs_
 
 ## Support and contact details
 
-_If any issues occur feel free to contact me at 503-456-3443 or email me at duncanrobbins19@gmail.com_
+_If any issues occur feel free to contact me at 503-819-4489 or email me at duncanrobbins19@gmail.com_
 
 ## Technologies Used
 
